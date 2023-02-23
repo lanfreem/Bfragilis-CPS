@@ -33,6 +33,8 @@ df <- readxl::read_excel(paste(sampleID, ".xls", sep=""),
                          range = cell_cols("A:O")
                          )
 
+df <- df[,c(1,3,2,5,4,7,6,9,8,11,10,13,12,15,14)] #Swap column order to get PSX-ON then PSX-OFF
+    
 colnames(df) <- sub("...1", "Barcode", colnames(df))
 
 #Separate 'ON' and 'OFF' Columns
